@@ -10,11 +10,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "Ubuntu Server 12.04 Chef"
+  config.vm.box = "ColossusRails"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  # config.vm.box_url = "http://domain.com/path/to/above.box"
+  config.vm.box_url = "https://s3-us-west-2.amazonaws.com/colossus-team/ColossusRails.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -115,4 +115,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+  config.vm.provision "shell",
+    inline: "/bin/bash -l -c 'source /home/vagrant/.bashrc && cd /vagrant && /home/vagrant/.rbenv/shims/bundle install && /home/vagrant/.rbenv/shims/rake db:create && /home/vagrant/.rbenv/shims/rake db:migrate'"
 end
