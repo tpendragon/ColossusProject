@@ -3,6 +3,9 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new(params[:project])
   end
+  def index
+    @projects = Project.all
+  end
   def create
     @project = Project.create(params[:project].merge(:user_id => current_user.id))
     if @project.persisted?
