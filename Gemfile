@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'jquery-rails'
 gem 'mysql2'
-gem 'sqlite3'
+gem 'pg'
 gem 'rails', '~> 3.2.11'
 gem 'simple_form'
 gem 'yard'
@@ -10,6 +10,8 @@ gem 'active_model_serializers', '~> 0.7.0'
 
 # Devise for authentication
 gem 'devise'
+
+gem 'rails_12factor', group: :production
 
 group :assets do
   gem 'coffee-rails'
@@ -41,3 +43,4 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
+ruby '2.0.0-p247'
