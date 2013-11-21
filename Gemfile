@@ -43,4 +43,4 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
-ruby '2.0.0-p247'
+ruby '2.0.0'
