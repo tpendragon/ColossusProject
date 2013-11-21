@@ -1,0 +1,8 @@
+<div class="new-project" class="container" style="text-align: center;">
+  <h2>Create a New Project</h2>
+  <%= simple_form_for @project, :html => {:class => 'form-inline'} do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.submit %>
+  <% end %>
+</div>

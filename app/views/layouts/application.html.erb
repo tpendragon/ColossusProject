@@ -10,7 +10,13 @@
   </head>
   <body>
     <%= render :partial => "application/navbar" %>
-    <%= render(:partial => "application/jumbotron") if params[:controller] == "index" %>
+    <% if params[:controller] == "index" %>
+      <% if user_signed_in? %>
+        <%= render :partial => "application/logged_in_jumbotron" %>
+      <% else %>
+        <%= render(:partial => "application/jumbotron") %>
+      <% end %>
+    <% end %>
     <div id="main" class="container">
       <%= render 'flashes' -%>
       <%= yield %>
