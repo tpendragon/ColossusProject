@@ -29,6 +29,17 @@ describe "logging in" do
           it "should show the logged in username" do
             expect(page).to have_content("Logged in as #{user.email}")
           end
+          it "should show a logout button" do
+            expect(page).to have_link "Logout"
+          end
+          context "when I click the logout link" do
+            before(:each) do
+              click_link "Logout"
+            end
+            it "should log me out" do
+              expect(page).to have_link("Login")
+            end
+          end
         end
         context "with an unknown user" do
           let(:user) {build(:user)}
