@@ -6,5 +6,6 @@ Volunteer::Application.routes.draw do
   root :to => "index#index"
   resources :projects do
     member { put :mercury_update }
+    collection { get :search }
   end
 end

@@ -19,6 +19,12 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
   end
+
+  def search
+    query = params[:q]
+    @results = Project.where("title LIKE ? OR description LIKE ?","%#{query}%", "%#{query}%")
+  end
+
   def mercury_update
     @project = Project.find(params[:id])
     if @project.user != current_user
