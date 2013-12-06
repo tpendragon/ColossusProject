@@ -116,5 +116,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   #   chef.validation_client_name = "ORGNAME-validator"
   config.vm.provision "shell",
-    inline: "/bin/bash -l -c 'source /home/vagrant/.bashrc && cd /vagrant && /home/vagrant/.rbenv/shims/bundle install && /home/vagrant/.rbenv/shims/rake db:create && /home/vagrant/.rbenv/shims/rake db:migrate'"
+    inline: "/bin/bash -l -c 'source /home/vagrant/.bashrc && cd /vagrant && sudo apt-get install libpq-dev -y && /home/vagrant/.rbenv/shims/bundle install && /home/vagrant/.rbenv/shims/rake db:create && /home/vagrant/.rbenv/shims/rake db:migrate && /home/vagrant/.rbenv/shims/rake db:test:prepare && touch tmp/restart.txt'"
 end
