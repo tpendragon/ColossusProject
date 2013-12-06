@@ -24,6 +24,9 @@ describe "browsing projects" do
       it "should show them all" do
         expect(page).to have_content(Project.first.title)
       end
+      it "should show links for each project" do
+        expect(page).to have_link(Project.first.title)
+      end
     end
   end
 end
