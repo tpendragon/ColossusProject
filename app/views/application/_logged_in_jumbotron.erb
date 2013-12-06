@@ -7,7 +7,7 @@
         <a class="btn btn-primary btn-lg" role="button" href="<%= new_project_path %>">Create Project</a>
       </div>
       <div class="col-lg-6" style="text-align:center;">
-        <a class="btn btn-primary btn-lg" role="button">Browse Project</a>
+        <%= link_to "Browse Projects", projects_path, :class => "btn btn-primary btn-lg", :role => "button" %>
       </div>
     </div>
   </div>

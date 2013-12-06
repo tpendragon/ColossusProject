@@ -3,6 +3,7 @@ footer {
   padding-bottom: 50px;
 }
 body {
-  padding-top:50px;
-  @media (max-width: $screen-sm-min) { padding-top: 100px; }
+}
+.jumbotron {
+  margin-top: -20px;
 }
