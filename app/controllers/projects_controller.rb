@@ -19,4 +19,15 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
   end
+  def mercury_update
+    @project = Project.find(params[:id])
+    if @project.user != current_user
+      render :text => "Unauthorized"
+    end
+    %w{information title description}.each do |value|
+      @project.send("#{value}=",params[:content]["project_#{value}".to_sym][:value])
+    end
+    @project.save!
+    render text: ""
+  end
 end

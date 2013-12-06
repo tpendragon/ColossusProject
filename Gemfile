@@ -14,6 +14,8 @@ gem 'devise'
 
 gem 'rails_12factor', group: :production
 
+gem 'mercury-rails'
+
 group :assets do
   gem 'coffee-rails'
   gem 'sass-rails'

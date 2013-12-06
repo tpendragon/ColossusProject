@@ -128,6 +128,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mercury-rails (0.9.0)
+      coffee-rails
+      railties (~> 3.2)
     meta_request (0.2.8)
       callsite
       rack-contrib
@@ -280,6 +283,7 @@ DEPENDENCIES
   guard-rspec (~> 3.0)
   jazz_hands (= 0.5.1)
   jquery-rails
+  mercury-rails
   meta_request
   mysql2
   pg
